@@ -1,11 +1,11 @@
-﻿namespace ConsoleApp1
+﻿namespace ConsoleApp1.HomeWork1
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             string name = Console.ReadLine();
-            Console.WriteLine("Hell, " + name);
+            Console.WriteLine("Hello, " + name + ", it's an updated message");
         }
     }
 }
