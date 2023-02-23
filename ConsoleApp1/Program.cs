@@ -13,7 +13,7 @@
         public static void Task1()
         {
             int operand1 = 2;
-            int operand2 = 3;
+            int operand2 = 0;
             int result;
 
             Console.WriteLine("Please enter an arithmetic operator : \"+\", \"-\", \"*\" or \"\\\"");
@@ -33,9 +33,15 @@
                     result = operand1 * operand2;
                     Console.WriteLine(result);
                     break;
+                case "/" and : //если ты видишь этот коммент, значит у меня все еще ступор мозговины
+                    Console.WriteLine("Cannot divide by 0"); 
+                    break;
                 case "/":
                     result = operand1 / operand2;
                     Console.WriteLine(result);
+                    break;
+                default:
+                    Console.WriteLine("Invalid character, please try again");
                     break;
 
             }
@@ -72,14 +78,15 @@
 
         }
 
+        /* WORK IN PROGRESS
 
-        public static void Task3()
-        {
-            Console.WriteLine("Введите слово");
-            string input = Console.ReadLine();
+                public static void Task3()
+                {
+                    Console.WriteLine("Введите слово");
+                    string input = Console.ReadLine();
 
 
-        }
+                } */
 
     }
 }
