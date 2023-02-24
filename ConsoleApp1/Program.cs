@@ -6,9 +6,9 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Task1();
+            //Task1();
             //Task2();
-            //Task3();
+            Task3();
 
         }
 
@@ -87,18 +87,60 @@ namespace ConsoleApp1
         }
 
 
-                public static void Task3()
+        public static void Task3()
         {
-            Console.WriteLine("Введите слово");
+            Console.WriteLine("Введите слово для описания погоды");
             string input = Console.ReadLine();
 
+            if (input == "Холодно")
+            {
+                Console.WriteLine("cold");
+            }
+            else if (input == "Солнечно")
+            {
+                Console.WriteLine("sunny");
+            }
+            else if (input == "Жарко")
+            {
+                Console.WriteLine("hot");
+            }
+            else if (input == "Туманно")
+            {
+                Console.WriteLine("foggy");
+            }
+            else if (input == "Дождливо")
+            {
+                Console.WriteLine("rainy");
+            }
+            else if (input == "Снежно")
+            {
+                Console.WriteLine("snowy");
+            }
+            else if (input == "Ветрено")
+            {
+                Console.WriteLine("windy");
+            }
+            else if (input == "Облачно")
+            {
+                Console.WriteLine("cloudy");
+            }
+            else if (input == "Прохладно")
+            {
+                Console.WriteLine("cool");
+            }
+            else if (input == "Морозно")
+            {
+                Console.WriteLine("frosty");
+            }
+            else
+            {
+                Console.WriteLine("Перевод для слова отсутствует :("); //Пока так , если успею , попробую найти регистронезависимое решение 
+            }
 
         }
-
     }
+
 }
-
-
 
 
 
