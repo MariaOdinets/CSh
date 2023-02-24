@@ -8,7 +8,8 @@ namespace ConsoleApp1
         {
             //Task1();
             //Task2();
-            Task3();
+            //Task3();
+            Task4();
 
         }
 
@@ -137,6 +138,21 @@ namespace ConsoleApp1
                 Console.WriteLine("Перевод для слова отсутствует :("); //Пока так , если успею , попробую найти регистронезависимое решение 
             }
 
+        }
+
+
+        public static void Task4()
+        {
+            Console.WriteLine("Enter any number");
+            int input = int.Parse(Console.ReadLine());
+            if (input % 2 == 0)
+            {
+                Console.WriteLine("Entered number is even");
+            }
+            else
+            {
+                Console.WriteLine("Entered number is uneven");
+            }
         }
     }
 
