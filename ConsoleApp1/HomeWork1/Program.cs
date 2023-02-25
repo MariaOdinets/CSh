@@ -1,6 +1,4 @@
-﻿using System.Reflection.Emit;
-
-namespace ConsoleApp1
+﻿namespace ConsoleApp1.HomeWork1
 {
     internal class Program
     {
