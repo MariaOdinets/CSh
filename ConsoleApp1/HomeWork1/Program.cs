@@ -8,14 +8,12 @@
             //Task2();
             //Task3();
             Task4();
-
         }
 
         public static void Task1()
         {
             int operand1 = 2;
             int operand2 = 0;
-
 
             int result;
 
@@ -45,19 +43,12 @@
 
                     result = operand1 / operand2;
                     Console.WriteLine(result);
-
                     break;
                 default:
                     Console.WriteLine("Invalid character, please try again");
                     break;
-
             }
-
-
         }
-
-
-
         public static void Task2()
         {
             Console.WriteLine("Please enter any number from 0 to 100");
@@ -81,10 +72,7 @@
                     Console.WriteLine("Oops.. Entered number is out of requested range. Please try again");
                     break;
             }
-
-
         }
-
 
         public static void Task3()
         {
@@ -135,9 +123,7 @@
             {
                 Console.WriteLine("Перевод для слова отсутствует :("); //Пока так , если успею , попробую найти регистронезависимое решение 
             }
-
         }
-
 
         public static void Task4()
         {
@@ -153,20 +139,4 @@
             }
         }
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
