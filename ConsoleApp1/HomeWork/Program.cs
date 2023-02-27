@@ -7,6 +7,7 @@ namespace ConsoleApp1.HomeWork1
         static void Main()
         {
             //Homework3.Task0();
+            //Homework3.Task1();
             Homework3.Task2();
         }
     }

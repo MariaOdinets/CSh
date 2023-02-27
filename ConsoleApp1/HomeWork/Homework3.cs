@@ -25,27 +25,28 @@
 
         /// <summary>
         /// Создайте массив целых чисел. 
-        /// Пусть число задается с консоли.Если такого числа нет - выведите сообщениe об этом.
-        /// Удалите все вхождения заданного числа из массива. В результате должен быть новый массив без указанного числа.
+        /// Пусть число задается с консоли.
+        /// Удалите все вхождения заданного числа из массива. Если такого числа нет - выведите сообщениe об этом.
+        /// В результате должен быть новый массив без указанного числа.
         /// </summary>
-        public static void Task1()
-        {
-            int[] numbers = { 1, 3, 7, 45, 99 };
-            Console.WriteLine("Enter any number:");
+        //public static void Task1()
+        //{
+        //    int[] numbers = { 1, 3, 7, 45, 99 };
 
-            int input = int.Parse(Console.ReadLine());
+        //    Console.WriteLine("Enter any number:");
+        //    int input = int.Parse(Console.ReadLine());
 
-            foreach (int number in numbers)
-            {
+        //    for (int i = 0; i < numbers.Length; i++)
+        //    {
 
-            }
-        }
+        //    }
+        //}
 
         /// <summary>
         /// Создайте и заполните массив случайным числами
         /// Для генерации случайного числа используйте метод Random(). 
         /// Пусть будет возможность создавать массив произвольного размера. Пусть размер массива вводится с консоли.
-        /// TO DO Выведете максимальное, минимальное и среднее значение.
+        /// Выведете максимальное, минимальное и среднее значение.
         /// </summary>
         public static void Task2()
         {
@@ -56,13 +57,26 @@
 
             int[] numbers = new int[input];
 
+            int minValue = int.MaxValue;
+            int maxValue = int.MinValue;
+
             for (int i = 0; i < numbers.Length; i++)
             {
-                numbers[i] = (int)random.NextInt64(-200, 200);
+                numbers[i] = (int)random.NextInt64();
                 Console.Write(numbers[i] + " ");
-            }
-        }
 
+                if (numbers[i] < minValue)
+                {
+                    minValue = numbers[i];
+                }
+
+                else if (numbers[i] > maxValue)
+                {
+                    maxValue = numbers[i];
+                }
+            }
+            Console.Write($"\nMin array value is {minValue}, max array value is {maxValue}");
+        }
 
         /// <summary>
         /// Создайте 2 массива из 5 чисел.
