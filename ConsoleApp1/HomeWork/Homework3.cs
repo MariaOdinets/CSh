@@ -69,7 +69,6 @@
                 {
                     minValue = numbers[i];
                 }
-
                 else if (numbers[i] > maxValue)
                 {
                     maxValue = numbers[i];
