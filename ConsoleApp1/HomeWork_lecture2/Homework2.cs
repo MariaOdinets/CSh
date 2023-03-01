@@ -2,13 +2,13 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
-        {
-            //Task1();
-            //Task2();
-            //Task3();
-            Task4();
-        }
+        //private static void Main(string[] args)
+        //{
+        //    //Task1();
+        //    //Task2();
+        //    //Task3();
+        //    //Task4();
+        //}
 
         public static void Task1()
         {

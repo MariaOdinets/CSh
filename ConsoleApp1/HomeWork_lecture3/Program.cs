@@ -2,7 +2,7 @@
 
 namespace ConsoleApp1.HomeWork1
 {
-    internal class Program
+    internal class Program_lecture3
     {
         static void Main()
         {

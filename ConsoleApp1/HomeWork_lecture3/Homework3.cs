@@ -29,18 +29,18 @@
         /// Удалите все вхождения заданного числа из массива. Если такого числа нет - выведите сообщениe об этом.
         /// В результате должен быть новый массив без указанного числа.
         /// </summary>
-        //public static void Task1()
-        //{
-        //    int[] numbers = { 1, 3, 7, 45, 99 };
+        public static void Task1()
+        {
+            int[] numbers = { 1, 3, 7, 45, 99 };
 
-        //    Console.WriteLine("Enter any number:");
-        //    int input = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter any number:");
+            int input = int.Parse(Console.ReadLine());
 
-        //    for (int i = 0; i < numbers.Length; i++)
-        //    {
+            for (int i = 0; i < numbers.Length; i++)
+            {
 
-        //    }
-        //}
+            }
+        }
 
         /// <summary>
         /// Создайте и заполните массив случайным числами
@@ -59,11 +59,14 @@
 
             int minValue = int.MaxValue;
             int maxValue = int.MinValue;
+            double average = numbers[0];
 
             for (int i = 0; i < numbers.Length; i++)
             {
-                numbers[i] = (int)random.NextInt64();
+                numbers[i] = (int)random.NextInt64(2,2);
                 Console.Write(numbers[i] + " ");
+
+                average += numbers[i];
 
                 if (numbers[i] < minValue)
                 {
@@ -74,7 +77,9 @@
                     maxValue = numbers[i];
                 }
             }
-            Console.Write($"\nMin array value is {minValue}, max array value is {maxValue}");
+            average /= input;
+
+            Console.Write($"\nMin array value is {minValue}, max array value is {maxValue}, average is {Math.Round(average, 2)}");
         }
 
         /// <summary>
