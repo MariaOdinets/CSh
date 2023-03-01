@@ -63,7 +63,7 @@
 
             for (int i = 0; i < numbers.Length; i++)
             {
-                numbers[i] = (int)random.NextInt64(2,2);
+                numbers[i] = (int)random.NextInt64();
                 Console.Write(numbers[i] + " ");
 
                 average += numbers[i];
@@ -84,13 +84,48 @@
 
         /// <summary>
         /// Создайте 2 массива из 5 чисел.
-        /// Выведите массивы на консоль в двух отдельных строках.
+        /// Выведите массивы на консоль в двух отдельных строках. !!!
         /// Посчитайте среднее арифметическое элементов каждого массива
         /// Cообщите, для какого из массивов это значение оказалось больше (либо сообщите, что их средние арифметические равны).
         /// </summary>
         public static void Task3()
         {
+            Random random = new Random();
 
+            int[] numbers1 = new int[5];
+            int[] numbers2 = new int[5];
+
+            double average1 = numbers1[0];
+            double average2 = numbers2[0];
+
+            for (int i = 0; i < numbers1.Length; i++)
+            {
+                numbers1[i] = (int)random.NextInt64(1, 10);
+                Console.Write(numbers1[i] + " ");
+                average1 += numbers1[i];
+            }
+            average1 /= numbers1.Length;
+
+            for (int i = 0; i < numbers1.Length; i++)
+            {
+                numbers2[i] = (int)random.NextInt64(11, 20);
+                Console.Write(numbers2[i] + " ");
+                average2 += numbers2[i];
+            }
+            average2 /= numbers2.Length;
+
+            if (average1 < average2)
+            {
+                Console.WriteLine("\nThe arithmetic average of second array is bigger");
+            }
+            else if (average1 == average2)
+            {
+                Console.WriteLine("\nThe arithmetic average of two arrays is equal");
+            }
+            else
+            {
+                Console.WriteLine("\nThe arithmetic average of first array is bigger");
+            }
         }
     }
 }

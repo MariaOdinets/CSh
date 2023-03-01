@@ -8,7 +8,8 @@ namespace ConsoleApp1.HomeWork1
         {
             //Homework3.Task0();
             //Homework3.Task1();
-            Homework3.Task2();
+            //Homework3.Task2();
+            Homework3.Task3();
         }
     }
 }
