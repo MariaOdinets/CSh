@@ -31,14 +31,34 @@
         /// </summary>
         public static void Task1()
         {
-            int[] numbers = { 1, 3, 7, 45, 99 };
+            int[] numbers = { 1, 3, 7, 45, 99, 99, 99 };
+            int counter = 0;
 
             Console.WriteLine("Enter any number:");
             int input = int.Parse(Console.ReadLine());
 
             for (int i = 0; i < numbers.Length; i++)
             {
+                if (numbers[i] == input)
+                {
+                    counter++;
+                }
+            }
 
+            int[] numbersFinal = new int[numbers.Length - counter];
+
+            for (int i = 0, j = 0; i < numbers.Length; i++)
+            {
+                if (numbers[i] != input)
+                {
+                    numbersFinal[j] = numbers[i];
+                    j++;
+                }
+            }
+
+            foreach (int number in numbersFinal)
+            {
+                Console.Write(number + " ");
             }
         }
 
@@ -84,7 +104,7 @@
 
         /// <summary>
         /// Создайте 2 массива из 5 чисел.
-        /// Выведите массивы на консоль в двух отдельных строках. !!!
+        /// Выведите массивы на консоль в двух отдельных строках.
         /// Посчитайте среднее арифметическое элементов каждого массива
         /// Cообщите, для какого из массивов это значение оказалось больше (либо сообщите, что их средние арифметические равны).
         /// </summary>
