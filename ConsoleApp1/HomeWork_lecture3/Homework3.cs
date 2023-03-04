@@ -45,6 +45,12 @@
                 }
             }
 
+            if (counter == 0)
+            {
+                Console.WriteLine("Entered number does not exist in the array");
+                return;
+            }
+
             int[] numbersFinal = new int[numbers.Length - counter];
 
             for (int i = 0, j = 0; i < numbers.Length; i++)
@@ -125,6 +131,8 @@
                 average1 += numbers1[i];
             }
             average1 /= numbers1.Length;
+
+            Console.WriteLine();
 
             for (int i = 0; i < numbers1.Length; i++)
             {
