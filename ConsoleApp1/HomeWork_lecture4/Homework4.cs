@@ -18,7 +18,7 @@ namespace ConsoleApp1.HomeWork_lecture4
             string text = "222test testing tester 16545 1 55 111.545 454 777,554 tes t TEST";
 
             text = Regex.Replace(text, @"test", "testing", RegexOptions.IgnoreCase);
-            text = Regex.Replace(text, @"\d*", ""); //и как-то надо собрать это в одну строку
+            text = Regex.Replace(text, @"\d*", ""); //подскажи пожалуйста, можно ли (=как) записать в одну строку?
 
             Console.WriteLine(text);
         }
@@ -62,7 +62,13 @@ namespace ConsoleApp1.HomeWork_lecture4
         /// </summary>
         public static void Task4()
         {
+            string initial = "Плохой день";
+            StringBuilder changedString = new StringBuilder(initial.Substring(initial.IndexOf(" ")));
 
+            changedString.Insert(0, "Хороший").Insert(changedString.Length, "!!!!!!!!!");
+            changedString.Replace('!', '?', changedString.Length - 1, 1);
+
+            Console.WriteLine(changedString);
         }
 
         /// <summary>
