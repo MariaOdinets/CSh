@@ -24,19 +24,18 @@ namespace ConsoleApp1.HomeWork_lecture4
         }
 
         /// <summary>
-        /// Используя метод вывода значения в консоль, выполните конкатенацию слов и выведите на экран следующую фраз:
+        /// Используя метод вывода значения в консоль, выполните конкатенацию слов и выведите на экран следующую фразу:
         /// Welcome to the TMS lessons
         /// Каждое слово должно быть записано отдельно и взято в кавычки, например "Welcome". Не забывайте о пробелах после каждого слова
         /// </summary>
-        public static void Task2()
+        public static void Task2() // есть сомнение, что я правильно поняла формулировку задачи , если надо переделать , сообщи, пожалуйста
         {
-            string[] words =  { "Welcome", "to", "the", "TMS", "lessons" };
+            string[] words = { "Welcome", "to", "the", "TMS", "lessons" };
 
             foreach (string word in words)
             {
                 Console.Write(word + " ");
             }
-                            
         }
 
         /// <summary>
@@ -46,7 +45,13 @@ namespace ConsoleApp1.HomeWork_lecture4
         /// </summary>
         public static void Task3()
         {
+            string initialString = "teamwithsomeofexcersicesabcwanttomakeitbetter";
+            string[] subStrings = initialString.Split("abc");
 
+            foreach (string subString in subStrings)
+            {
+                Console.WriteLine(subString);
+            }
         }
 
         /// <summary>
