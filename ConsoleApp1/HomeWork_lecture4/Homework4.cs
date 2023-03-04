@@ -15,12 +15,12 @@ namespace ConsoleApp1.HomeWork_lecture4
         /// </summary>
         public static void Task1()
         {
-            string initial = "222test testing tester 16545 1 55 111.545 454 777,554 tes t TEST";
+            string text = "222test testing tester 16545 1 55 111.545 454 777,554 tes t TEST";
 
-            initial = Regex.Replace(initial, @"test", "testing", RegexOptions.IgnoreCase);
-            initial = Regex.Replace(initial, @"\d*", ""); //и как-то надо собрать это в одну строку
+            text = Regex.Replace(text, @"test", "testing", RegexOptions.IgnoreCase);
+            text = Regex.Replace(text, @"\d*", ""); //и как-то надо собрать это в одну строку
 
-            Console.WriteLine(initial);
+            Console.WriteLine(text);
         }
 
         /// <summary>
