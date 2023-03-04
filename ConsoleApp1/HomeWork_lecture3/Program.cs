@@ -2,14 +2,15 @@
 
 namespace ConsoleApp1.HomeWork1
 {
-    internal class Program_lecture3
+    internal class Program_lecture4
     {
         static void Main()
         {
-            //Homework3.Task0();
-            Homework3.Task1();
-            //Homework3.Task2();
-            //Homework3.Task3();
+            HomeWork_lecture4.Homework4.Task1();
+            //Homework4.Task2();
+            //Homework4.Task3();
+            //Homework4.Task4();
+            //Homework4.Task5();
         }
     }
 }
