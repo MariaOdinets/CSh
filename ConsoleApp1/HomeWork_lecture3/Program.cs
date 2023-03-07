@@ -8,19 +8,26 @@ namespace ConsoleApp1.HomeWork1
     {
         static void Main()
         {
-            CreditCard johnsCard = new CreditCard(111265115456, 123);
-            CreditCard davesCard = new CreditCard(2254654513, 0);
-            CreditCard katesCard = new CreditCard(3546546541, -500);
-
-            johnsCard.ReplenishCardAccount(1000);
-            davesCard.ReplenishCardAccount(1);
-            katesCard.WithdrawMoney(500);
-
-            johnsCard.GetInfo();
-            davesCard.GetInfo();
-            katesCard.GetInfo();
+            
         }
 
+
+        public void CreditCardTask()
+        {
+            {
+                CreditCard johnsCard = new CreditCard(111265115456, 123);
+                CreditCard davesCard = new CreditCard(2254654513, 0);
+                CreditCard katesCard = new CreditCard(3546546541, -500);
+
+                johnsCard.ReplenishCardAccount(1000);
+                davesCard.ReplenishCardAccount(1);
+                katesCard.WithdrawMoney(500);
+
+                johnsCard.GetInfo();
+                davesCard.GetInfo();
+                katesCard.GetInfo();
+            }
+        }
         public void PhoneTask()
         {
             {
