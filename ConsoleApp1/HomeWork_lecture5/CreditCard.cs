@@ -17,5 +17,28 @@ namespace ConsoleApp1.HomeWork_lecture5
     // Выведите на экран текущее состояние всех трех карточек.
     internal class CreditCard
     {
+        public long accountNumber;
+        public int availableBalance;
+
+        public CreditCard(long accountNumber, int availableBalance)
+        {
+            this.accountNumber = accountNumber;
+            this.availableBalance = availableBalance;
+        }
+
+        public void ReplenishCardAccount(int sum)
+        {
+            availableBalance += sum;
+        }
+
+        public void WithdrawMoney(int sum)
+        {
+            availableBalance -= sum;
+        }
+
+        public void GetInfo()
+        {
+            Console.WriteLine($"Account number: {accountNumber}, available balance: ${availableBalance}");
+        }
     }
 }

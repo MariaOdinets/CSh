@@ -22,7 +22,7 @@ namespace ConsoleApp1.HomeWork_lecture5
     /// </summary>
     internal class Phone
     {
-        public int number;
+        public int number; 
         public string model;
         public double weight;
 
