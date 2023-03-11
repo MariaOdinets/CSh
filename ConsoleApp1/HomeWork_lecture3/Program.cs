@@ -1,5 +1,6 @@
 ﻿using ConsoleApp1.HomeWork;
 using ConsoleApp1.HomeWork_lecture5;
+using ConsoleApp1.HomeWork_lecture6;
 using System.Xml.Linq;
 
 namespace ConsoleApp1.HomeWork1
@@ -7,8 +8,9 @@ namespace ConsoleApp1.HomeWork1
     internal class Program_lecture5
     {
         static void Main()
-        {
-            
+        {           
+            Triangle triangle = new TriangleBuilder().CreateTriangle(3, 4, 5);
+            Console.Write(triangle.GetSquare());
         }
 
 
