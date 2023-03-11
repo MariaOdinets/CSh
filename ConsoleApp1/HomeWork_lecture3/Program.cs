@@ -8,9 +8,11 @@ namespace ConsoleApp1.HomeWork1
     internal class Program_lecture5
     {
         static void Main()
-        {           
-            Triangle triangle = new TriangleBuilder().CreateTriangle(3, 4, 5);
-            Console.Write(triangle.GetSquare());
+        {
+            Rectangle rectangle = new RectangleBuilder().CreateRectangle(4, 4, 4, 4);
+            //Triangle triangle = new TriangleBuilder().CreateTriangle(3, 4, 5);
+            //Console.Write(triangle.GetSquare());
+            Console.WriteLine(rectangle.GetSquare());
         }
 
 

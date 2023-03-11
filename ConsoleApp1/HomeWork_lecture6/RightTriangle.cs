@@ -45,4 +45,3 @@ namespace ConsoleApp1.HomeWork_lecture6
         }
     }
 }
-

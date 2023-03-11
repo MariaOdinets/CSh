@@ -30,6 +30,7 @@ namespace ConsoleApp1.HomeWork_lecture6
             {
                 return new RightTriangle(firstSide, secondSide, thirdSide);
             }
+
             else
             {
                 return new ScaleneTriangle(firstSide, secondSide, thirdSide);
