@@ -1,6 +1,8 @@
 ﻿using ConsoleApp1.HomeWork;
 using ConsoleApp1.HomeWork_lecture5;
 using ConsoleApp1.HomeWork_lecture6;
+using ConsoleApp1.HomeWork_lecture6.Clinic;
+using ConsoleApp1.HomeWork_lecture6.Figures;
 using System.Xml.Linq;
 
 namespace ConsoleApp1.HomeWork1
@@ -9,13 +11,16 @@ namespace ConsoleApp1.HomeWork1
     {
         static void Main()
         {
-            Rectangle rectangle = new RectangleBuilder().CreateRectangle(4, 4, 4, 4);
-            //Triangle triangle = new TriangleBuilder().CreateTriangle(3, 4, 5);
-            //Console.Write(triangle.GetSquare());
-            Console.WriteLine(rectangle.GetSquare());
+            TreatmentPlan treatmentPlan = new TreatmentPlan(1);
         }
 
-
+        public void FiguresTask()
+        {
+            //Rectangle rectangle = new RectangleBuilder().CreateRectangle(4, 4, 4, 4);
+            //Triangle triangle = new TriangleBuilder().CreateTriangle(3, 4, 5);
+            //Console.Write(triangle.GetSquare());
+            //Console.WriteLine(rectangle.GetSquare());
+        }
         public void CreditCardTask()
         {
             {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1.HomeWork_lecture6
+namespace ConsoleApp1.HomeWork_lecture6.Figures
 {
     internal class RightTriangle : Triangle
     {
@@ -34,7 +34,7 @@ namespace ConsoleApp1.HomeWork_lecture6
                     return GetSquareRightTriangle(firstSide, thirdSide);
                 }
                 else
-                { 
+                {
                     return GetSquareRightTriangle(firstSide, secondSide);
                 }
             }
