@@ -1,5 +1,8 @@
 ﻿using ConsoleApp1.HomeWork;
 using ConsoleApp1.HomeWork_lecture5;
+using ConsoleApp1.HomeWork_lecture6;
+using ConsoleApp1.HomeWork_lecture6.Clinic;
+using ConsoleApp1.HomeWork_lecture6.Figures;
 using System.Xml.Linq;
 
 namespace ConsoleApp1.HomeWork1
@@ -8,19 +11,42 @@ namespace ConsoleApp1.HomeWork1
     {
         static void Main()
         {
-            CreditCard johnsCard = new CreditCard(111265115456, 123);
-            CreditCard davesCard = new CreditCard(2254654513, 0);
-            CreditCard katesCard = new CreditCard(3546546541, -500);
-
-            johnsCard.ReplenishCardAccount(1000);
-            davesCard.ReplenishCardAccount(1);
-            katesCard.WithdrawMoney(500);
-
-            johnsCard.GetInfo();
-            davesCard.GetInfo();
-            katesCard.GetInfo();
+            Clinic();
+            FiguresTask();
         }
 
+        public static void Clinic()
+        {
+            Patient patient = new Patient("Tom Walker", "Headache", 3);
+            patient.treatmentPlan.AssignDoctor();
+        }
+        public static void FiguresTask()
+        {
+            Figures[] figures = new Figures[]{
+                new RectangleBuilder().CreateRectangle(4, 4, 4, 4),
+                new TriangleBuilder().CreateTriangle(3, 4, 5)
+            };
+            foreach (var figure in figures)
+            {
+                Console.WriteLine(figure.GetSquare());
+            }
+        }
+        public void CreditCardTask()
+        {
+            {
+                CreditCard johnsCard = new CreditCard(111265115456, 123);
+                CreditCard davesCard = new CreditCard(2254654513, 0);
+                CreditCard katesCard = new CreditCard(3546546541, -500);
+
+                johnsCard.ReplenishCardAccount(1000);
+                davesCard.ReplenishCardAccount(1);
+                katesCard.WithdrawMoney(500);
+
+                johnsCard.GetInfo();
+                davesCard.GetInfo();
+                katesCard.GetInfo();
+            }
+        }
         public void PhoneTask()
         {
             {
