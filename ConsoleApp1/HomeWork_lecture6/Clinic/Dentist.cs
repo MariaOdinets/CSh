@@ -8,14 +8,13 @@ namespace ConsoleApp1.HomeWork_lecture6.Clinic
 {
     internal class Dentist : Doctor
     {
-
         public Dentist()
         {
             
         }
-        public override string Treat()
+        public override void Treat()
         {
-            return "Remove this tooth.. now";
+            Console.WriteLine("Medical conclusion: Remove this tooth.. now");
         }
     }
 }

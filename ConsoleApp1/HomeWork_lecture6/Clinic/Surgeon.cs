@@ -12,9 +12,9 @@ namespace ConsoleApp1.HomeWork_lecture6.Clinic
         {
 
         }    
-        public override string Treat()
+        public override void Treat()
         {
-            return "I suggest to cut this off";
+            Console.WriteLine("Medical conclusion: I suggest to cut this off");
         }
     }
 }

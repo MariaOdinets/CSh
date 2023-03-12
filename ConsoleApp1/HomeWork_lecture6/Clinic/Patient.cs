@@ -8,15 +8,15 @@ namespace ConsoleApp1.HomeWork_lecture6.Clinic
 {
     public class Patient
     {
-        public string name;
-        public string complains;    
+        public string patientName;
+        public string complains;
+        public TreatmentPlan treatmentPlan;
 
-        public Patient(string name, string complains)
+        public Patient(string patientName, string complains, int treatmentCode)
         {
-            this.name = name;
+            this.patientName = patientName;
             this.complains = complains;
-        }
-
-        Patient patient = new Patient("Tom Walker", "Headache");
+            this.treatmentPlan = new TreatmentPlan(treatmentCode, this);
+        }        
     }
 }

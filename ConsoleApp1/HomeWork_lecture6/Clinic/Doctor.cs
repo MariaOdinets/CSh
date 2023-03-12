@@ -18,9 +18,6 @@ namespace ConsoleApp1.HomeWork_lecture6.Clinic
     /// </summary>
     abstract class Doctor
     {
-        public virtual string Treat()
-        {
-            return null;
-        }
+        public abstract void Treat();
     }
 }

@@ -6,28 +6,36 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.HomeWork_lecture6.Clinic
 {
-    internal class TreatmentPlan
+    public class TreatmentPlan
     {
         int treatmentCode;
-        public TreatmentPlan(int treatmentCode)
+        Doctor doctor;
+        Patient patient;
+        public TreatmentPlan(int treatmentCode, Patient patient)
         {
             this.treatmentCode = treatmentCode;
+            this.patient = patient;
         }
 
-         public virtual string AssignDoctor(int treatmentCode)
+        public void AssignDoctor()
         {
             if (treatmentCode == 1)
             {
-                Console.WriteLine("Patient is directed to the Surgeon");
-                return null;
+                Console.WriteLine($"Patient {patient.patientName} with {patient.complains} is directed to the Surgeon");
+                doctor = new Surgeon();
+                doctor.Treat();
             }
             else if (treatmentCode == 2)
             {
-                return "Patient is directed to the Dentist";
+                Console.WriteLine($"Patient {patient.patientName} with {patient.complains} is directed to the Dentist");
+                doctor = new Dentist();
+                doctor.Treat();
             }
             else
             {
-                return "Patient is directed to the Physician";
+                Console.WriteLine($"Patient {patient.patientName} with {patient.complains} is directed to the Physician");
+                doctor = new Physician();
+                doctor.Treat();
             }
         }
     }

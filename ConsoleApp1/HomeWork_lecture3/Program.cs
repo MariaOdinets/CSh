@@ -11,15 +11,25 @@ namespace ConsoleApp1.HomeWork1
     {
         static void Main()
         {
-            TreatmentPlan treatmentPlan = new TreatmentPlan(1);
+            Clinic();
+            FiguresTask();
         }
 
-        public void FiguresTask()
+        public static void Clinic()
         {
-            //Rectangle rectangle = new RectangleBuilder().CreateRectangle(4, 4, 4, 4);
-            //Triangle triangle = new TriangleBuilder().CreateTriangle(3, 4, 5);
-            //Console.Write(triangle.GetSquare());
-            //Console.WriteLine(rectangle.GetSquare());
+            Patient patient = new Patient("Tom Walker", "Headache", 3);
+            patient.treatmentPlan.AssignDoctor();
+        }
+        public static void FiguresTask()
+        {
+            Figures[] figures = new Figures[]{
+                new RectangleBuilder().CreateRectangle(4, 4, 4, 4),
+                new TriangleBuilder().CreateTriangle(3, 4, 5)
+            };
+            foreach (var figure in figures)
+            {
+                Console.WriteLine(figure.GetSquare());
+            }
         }
         public void CreditCardTask()
         {

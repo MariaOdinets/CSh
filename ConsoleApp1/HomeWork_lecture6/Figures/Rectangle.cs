@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.HomeWork_lecture6.Figures
 {
-    public class Rectangle
+    public class Rectangle : Figures
     {
         public double firstSide;
         public double secondSide;
@@ -21,7 +21,7 @@ namespace ConsoleApp1.HomeWork_lecture6.Figures
             this.fourthSide = fourthSide;
         }
 
-        public double GetSquare()
+        public override double GetSquare()
         {
             Console.WriteLine("Get square for a rectangle");
             if (firstSide != secondSide)

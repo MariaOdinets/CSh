@@ -12,9 +12,9 @@ namespace ConsoleApp1.HomeWork_lecture6.Clinic
         {
 
         }
-        public override string Treat()
+        public override void Treat()
         {
-            return "Have a rest and take some vitamins";
+            Console.WriteLine("Medical conclusion: Have a rest and take some vitamins");
         }
     }
 }

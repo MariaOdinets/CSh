@@ -15,7 +15,7 @@ namespace ConsoleApp1.HomeWork_lecture6.Figures
     //  Добавить класс для реализации иерархии фигур 
     //  Создавь массив квадратов, прямоугольника и треугольников и вывести их площади
     /// </summary>
-    public class Triangle
+    public class Triangle : Figures
     {
         public double firstSide;
         public double secondSide;
@@ -28,7 +28,7 @@ namespace ConsoleApp1.HomeWork_lecture6.Figures
             this.thirdSide = thirdSide;
         }
 
-        public virtual double GetSquare()
+        public override double GetSquare()
         {
             Console.WriteLine("Get square Heron formula");
             double halfPerimeter = (firstSide + secondSide + thirdSide) / 2;
