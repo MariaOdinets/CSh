@@ -4,6 +4,7 @@ using ConsoleApp1.HomeWork_lecture6;
 using ConsoleApp1.HomeWork_lecture6.Clinic;
 using ConsoleApp1.HomeWork_lecture6.Figures;
 using System.Xml.Linq;
+using TMS_homeworks.HomeWork_lecture6.Autopark;
 
 namespace ConsoleApp1.HomeWork1
 {
@@ -11,8 +12,10 @@ namespace ConsoleApp1.HomeWork1
     {
         static void Main()
         {
-            Clinic();
-            FiguresTask();
+            Bus bus = new Bus("Pivet Drive", 6, "11:38", 12);
+            Subway subway = new Subway("Monumentale", 133, "14:55", 44);
+            bus.getVehicleType();
+            Console.WriteLine(bus.getVehicleType());
         }
 
         public static void Clinic()
