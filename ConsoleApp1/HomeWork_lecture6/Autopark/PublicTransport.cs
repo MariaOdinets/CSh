@@ -36,7 +36,7 @@ namespace TMS_homeworks.HomeWork_lecture6.Autopark
 
         public override string ToString()
         {
-            return $"{numberOfSeats}";
+            return $"{number}, {destination}, {departureTime}, {numberOfSeats}";
         }
 
         public int CompareTo(object? obj)            
@@ -47,7 +47,7 @@ namespace TMS_homeworks.HomeWork_lecture6.Autopark
             }
             else
             {
-                return -1;
+                return 0;
             }
         }
 
