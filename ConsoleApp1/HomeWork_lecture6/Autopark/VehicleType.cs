@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace TMS_homeworks.HomeWork_lecture6.Autopark
 {
-    internal interface IVehicleType
+    public enum VehicleType
     {
-        public string getVehicleType();
+        Fuel,
+        Rail,
+        Electric
     }
 }

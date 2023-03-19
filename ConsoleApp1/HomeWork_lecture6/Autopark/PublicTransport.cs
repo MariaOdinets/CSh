@@ -27,12 +27,29 @@ namespace TMS_homeworks.HomeWork_lecture6.Autopark
     //Внутри метода printTransportType необходимо вызвать другой метод, возвращающий тип транспорта и вывести эту информацию на консоль.
     //В main вызвать метод printTransportType несколько раз, передавая ему как параметр объекты классов наследников (Bus, Trolleybus и т.д.)
     /// </summary>
-    public abstract class PublicTransport : IVehicleType
+    public abstract class PublicTransport : IComparable
     {
         public string destination { get; set; }
         public int number { get; set; }
         public string departureTime { get; set; }
         public int numberOfSeats { get; set; }
+
+        public override string ToString()
+        {
+            return $"{numberOfSeats}";
+        }
+
+        public int CompareTo(object? obj)            
+        {
+            if (obj is PublicTransport transport)
+            {
+                return numberOfSeats.CompareTo(transport.numberOfSeats);
+            }
+            else
+            {
+                return -1;
+            }
+        }
 
         public PublicTransport(string destination, int number, string departureTime, int numberOfSeats)
         {
@@ -40,11 +57,6 @@ namespace TMS_homeworks.HomeWork_lecture6.Autopark
             this.number = number;
             this.departureTime = departureTime;
             this.numberOfSeats = numberOfSeats;
-        }
-
-        public virtual string getVehicleType()
-        {            
-            return "default type";
         }
     }
 }

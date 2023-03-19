@@ -12,9 +12,9 @@ namespace TMS_homeworks.HomeWork_lecture6.Autopark
         {
 
         }
-        public override string getVehicleType()
+        public VehicleType getVehicleType()
         {
-            return "Rail";
+            return VehicleType.Rail;
         }
     }
 }

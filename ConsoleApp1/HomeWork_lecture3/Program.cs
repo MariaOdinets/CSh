@@ -12,10 +12,23 @@ namespace ConsoleApp1.HomeWork1
     {
         static void Main()
         {
-            Bus bus = new Bus("Pivet Drive", 6, "11:38", 12);
-            Subway subway = new Subway("Monumentale", 133, "14:55", 44);
-            bus.getVehicleType();
-            Console.WriteLine(bus.getVehicleType());
+            Bus bus12 = new Bus("Pivet Drive", 12, "11:38", 12);
+            Bus bus27 = new Bus("Sun street", 27, "10:05", 40);
+            Subway subway44 = new Subway("Monumentale", 44, "14:55", 133);
+            Subway subway793 = new Subway("Pivet Drive", 793, "09:37", 200);
+            Tram tram25 = new Tram("King's Cross", 25, "05:40", 40);
+            Tram tram3 = new Tram("Monumentale", 3, "07:40", 19);
+            Trolleybus trolleybus78 = new Trolleybus("Sun street", 78, "12:04", 17);
+            Trolleybus trolleybus5 = new Trolleybus("King's Cross", 5, "23:49", 44);
+
+            PublicTransport[] publicTransports = new PublicTransport[] { bus12, bus27, subway44, subway793, tram25, tram3, trolleybus78, trolleybus5 };
+
+            Array.Sort(publicTransports);
+
+            foreach (var transport in publicTransports)
+            {
+                Console.WriteLine(transport);
+            }
         }
 
         public static void Clinic()
