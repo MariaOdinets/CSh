@@ -1,16 +1,40 @@
-﻿using ConsoleApp1.HomeWork;
-using ConsoleApp1.HomeWork_lecture5;
-using ConsoleApp1.HomeWork_lecture6;
+﻿using ConsoleApp1.HomeWork_lecture5;
 using ConsoleApp1.HomeWork_lecture6.Clinic;
 using ConsoleApp1.HomeWork_lecture6.Figures;
-using System.Xml.Linq;
 using TMS_homeworks.HomeWork_lecture6.Autopark;
+using TMS_homeworks.HomeWork_lecture8_Exceptions;
 
 namespace ConsoleApp1.HomeWork1
 {
     internal class Program_lecture5
     {
         static void Main()
+        {
+            try
+            {
+                Console.WriteLine("Your login:");
+                string? login = Console.ReadLine();
+
+                Console.WriteLine("Your password:");
+                string? password = Console.ReadLine();
+
+                Console.WriteLine("Confirm your password:");
+                string? confirmPassword = Console.ReadLine();
+
+                var authorized = Authorization.Authorize(login, password, confirmPassword);
+
+                if (authorized)
+                {
+                    Console.WriteLine("Authorized successfully");
+                }
+            } 
+            catch (Exception ex) 
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public static void Autopark()
         {
             Bus bus12 = new Bus("Pivet Drive", 12, "11:38", 12);
             Bus bus27 = new Bus("Sun street", 27, "10:05", 40);
@@ -30,7 +54,6 @@ namespace ConsoleApp1.HomeWork1
                 Console.WriteLine(transport);
             }
         }
-
         public static void Clinic()
         {
             Patient patient = new Patient("Tom Walker", "Headache", 3);
