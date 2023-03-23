@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace TMS_homeworks.HomeWork_lecture8_Exceptions
 {
-    /// <summary>
+    /// <summary> + ДОПИСАТЬ REGEX
     ///Создать класс, в котором будет статический метод.
     //Этот метод принимает на вход три параметра: Login, Password, confirmPassword.
     //Все поля имеют тип данных String.
@@ -19,10 +22,10 @@ namespace TMS_homeworks.HomeWork_lecture8_Exceptions
     //один по умолчанию, второй принимает сообщение исключения и передает его в конструктор класса Exception.
     //Метод возвращает true, если значения верны или false в другом случае.
     /// </summary> 
-    public class Authorization
+    public class Registration
     {
-        Authorization authorization = new Authorization();
-        public static bool Authorize(string login, string password, string confirmPassword)
+        Registration registration = new Registration();
+        public static bool Register(string login, string password, string confirmPassword)
         {
             if (login.Length == 0)
             {
@@ -37,12 +40,9 @@ namespace TMS_homeworks.HomeWork_lecture8_Exceptions
             {
                 throw new WrongPasswordException("Password is required, must be less than 20 characters, should not contain any spaces and should contain at least one digit");
             }
-            else
+            if (password.GetHashCode() != confirmPassword.GetHashCode())
             {
-                if (password.GetHashCode() != confirmPassword.GetHashCode())
-                {
-                    throw new WrongPasswordException("Passwords don't match");
-                }
+                throw new WrongPasswordException("Passwords don't match");
             }
             return true;
         }

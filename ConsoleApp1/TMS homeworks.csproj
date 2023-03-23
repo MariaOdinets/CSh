@@ -13,4 +13,8 @@
     <None Remove="HomeWork_lecture6_OOP\HomeWork_lecture8_Exceptions\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="HomeWork_lecture9_Collections\" />
+  </ItemGroup>
+
 </Project>

@@ -1,6 +1,7 @@
 ﻿using ConsoleApp1.HomeWork_lecture5;
 using ConsoleApp1.HomeWork_lecture6.Clinic;
 using ConsoleApp1.HomeWork_lecture6.Figures;
+using System.Collections;
 using TMS_homeworks.HomeWork_lecture6.Autopark;
 using TMS_homeworks.HomeWork_lecture8_Exceptions;
 
@@ -9,6 +10,19 @@ namespace ConsoleApp1.HomeWork1
     internal class Program_lecture5
     {
         static void Main()
+        {
+           ArrayList list = new ArrayList();
+            try
+            {
+                object s = list[18];
+            }
+            catch
+            {
+             Console.WriteLine("Index out of bounds exception");
+            }
+        }
+
+        public static void RegistrationExceptions()
         {
             try
             {
@@ -21,14 +35,14 @@ namespace ConsoleApp1.HomeWork1
                 Console.WriteLine("Confirm your password:");
                 string? confirmPassword = Console.ReadLine();
 
-                var authorized = Authorization.Authorize(login, password, confirmPassword);
+                var registered = Registration.Register(login, password, confirmPassword);
 
-                if (authorized)
+                if (registered)
                 {
-                    Console.WriteLine("Authorized successfully");
+                    Console.WriteLine("Registered successfully");
                 }
-            } 
-            catch (Exception ex) 
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
