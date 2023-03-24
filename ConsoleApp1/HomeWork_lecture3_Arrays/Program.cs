@@ -2,8 +2,10 @@
 using ConsoleApp1.HomeWork_lecture6.Clinic;
 using ConsoleApp1.HomeWork_lecture6.Figures;
 using System.Collections;
+using System.Runtime.ExceptionServices;
 using TMS_homeworks.HomeWork_lecture6.Autopark;
 using TMS_homeworks.HomeWork_lecture8_Exceptions;
+using TMS_homeworks.HomeWork_lecture9_Collections;
 
 namespace ConsoleApp1.HomeWork1
 {
@@ -11,17 +13,21 @@ namespace ConsoleApp1.HomeWork1
     {
         static void Main()
         {
-           ArrayList list = new ArrayList();
+            StudentsList.Print();
+        }
+
+        public static void ExceptionTask()
+        {
+            ArrayList list = new ArrayList();
             try
             {
                 object s = list[18];
             }
             catch
             {
-             Console.WriteLine("Index out of bounds exception");
+                Console.WriteLine("Index out of bounds exception");
             }
         }
-
         public static void RegistrationExceptions()
         {
             try
