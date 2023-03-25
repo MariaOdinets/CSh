@@ -13,6 +13,24 @@ namespace ConsoleApp1.HomeWork1
     {
         static void Main()
         {
+            //Product.GetInfo();
+        }
+
+        public static void ProductBase()
+        {
+            List<Product> productList = new List<Product>()
+            {
+                new Dairy("Chocolate milk", 150, new DateTime(2022, 11, 12), new DateTime(2023, 01, 12)),
+                new Dairy("Camambert", 300, new DateTime(2023, 01, 25), new DateTime(2023, 07, 24)),
+                new Dairy("Kefir", 250, new DateTime(2022, 11, 25), new DateTime(2023, 02, 02)),
+                new Pastry("Croissant", 270, new DateTime(2023, 03, 08), new DateTime(2023, 03, 09)),
+                new Pastry("Brezel", 180, new DateTime(2023, 03, 08), new DateTime(2023, 03, 12)),
+                new Pastry("Carrot bun", 60, new DateTime(2023, 03, 08), new DateTime(2023, 03, 16))
+            };
+        }
+
+        public static void PrintStudentList()
+        {
             StudentsList.Print();
         }
 
