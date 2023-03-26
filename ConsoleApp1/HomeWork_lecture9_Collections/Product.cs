@@ -22,14 +22,14 @@ namespace TMS_homeworks.HomeWork_lecture9_Collections
         public int price { get; set; }
         public DateTime manufactureDate { get; set; }
         public DateTime expirationDate { get; set; }
-        public List<Product> productList { get; set; }
 
+        public override string ToString()
+        {
+            return $"Item: {name}, price: {price}, mfd: {manufactureDate}, best before: {expirationDate}";
+        }
         public virtual void GetInfo()
         {
-            foreach(var product in productList)
-            {
-                Console.WriteLine($"Product {name}, price {price}, mfd {manufactureDate}, exp date {expirationDate}");
-            }
+            ToString();
         }
         public virtual void CheckExpirationDate()
         {
@@ -44,10 +44,14 @@ namespace TMS_homeworks.HomeWork_lecture9_Collections
             this.expirationDate = expirationDate;
         }
 
-        public Product(string name, int price)
+        public Product(ProductItem item, int quantity) 
+        { 
+        
+        }
+
+        public Product()
         {
-            this.name = name;
-            this.price = price;
+
         }
     }
 }

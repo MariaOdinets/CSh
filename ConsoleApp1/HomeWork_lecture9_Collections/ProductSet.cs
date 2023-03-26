@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace TMS_homeworks.HomeWork_lecture9_Collections
 {
-    abstract class ProductSet : Product //IEnumerable
+    public class ProductSet : Product //IEnumerable
     {
-        public ProductSet(string name, int price) : base(name, price)
+        public ProductItem item;
+        public List<ProductItem> ProductItems { get; }
+        public ProductSet(List<ProductItem> productItems)
         {
-
+            ProductItems = productItems;
         }
+
         public override void GetInfo()
         {
            

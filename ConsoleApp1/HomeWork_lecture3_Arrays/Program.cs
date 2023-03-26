@@ -3,6 +3,7 @@ using ConsoleApp1.HomeWork_lecture6.Clinic;
 using ConsoleApp1.HomeWork_lecture6.Figures;
 using System.Collections;
 using System.Runtime.ExceptionServices;
+using System.Xml.Linq;
 using TMS_homeworks.HomeWork_lecture6.Autopark;
 using TMS_homeworks.HomeWork_lecture8_Exceptions;
 using TMS_homeworks.HomeWork_lecture9_Collections;
@@ -13,19 +14,32 @@ namespace ConsoleApp1.HomeWork1
     {
         static void Main()
         {
-            //Product.GetInfo();
+
         }
 
         public static void ProductBase()
         {
-            List<Product> productList = new List<Product>()
+            //List<Product> productList = new List<Product>()
+            //{
+            //    new ProductItem("Chocolate milk", 150, new (2022, 11, 12), new DateTime(2023, 01, 12)),
+            //    new ProductItem("Camambert", 300, new DateTime(2023, 01, 25), new DateTime(2023, 07, 24)),
+            //    new ProductItem("Kefir", 250, new DateTime(2022, 11, 25), new DateTime(2023, 02, 02)),
+            //    new ProductItem("Croissant", 270, new DateTime(2023, 03, 08), new DateTime(2023, 03, 09)),
+            //    new ProductItem("Brezel", 180, new DateTime(2023, 03, 08), new DateTime(2023, 03, 12)),
+            //    new ProductItem("Carrot bun", 60, new DateTime(2023, 03, 08), new DateTime(2023, 03, 16))
+            //};
+
+            ProductItem croissant = new ProductItem("Croissant", 270, new DateTime(2023, 03, 08), new DateTime(2023, 03, 09));
+            ProductItem brezel = new ProductItem("Brezel", 180, new DateTime(2023, 03, 08), new DateTime(2023, 03, 12));
+            ProductItem chocolateMilk = new ProductItem("Chocolate milk", 150, new DateTime(2022, 11, 12), new DateTime(2023, 01, 12));
+
+            List<Product> products = new List<Product>()
             {
-                new Dairy("Chocolate milk", 150, new DateTime(2022, 11, 12), new DateTime(2023, 01, 12)),
-                new Dairy("Camambert", 300, new DateTime(2023, 01, 25), new DateTime(2023, 07, 24)),
-                new Dairy("Kefir", 250, new DateTime(2022, 11, 25), new DateTime(2023, 02, 02)),
-                new Pastry("Croissant", 270, new DateTime(2023, 03, 08), new DateTime(2023, 03, 09)),
-                new Pastry("Brezel", 180, new DateTime(2023, 03, 08), new DateTime(2023, 03, 12)),
-                new Pastry("Carrot bun", 60, new DateTime(2023, 03, 08), new DateTime(2023, 03, 16))
+                new ProductBatch(chocolateMilk, 50),
+                new ProductBatch(croissant, 10),
+                new ProductItem("Croissant", 270, new DateTime(2023, 03, 08), new DateTime(2023, 03, 09)),
+                new ProductSet(new List<ProductItem>() {croissant, brezel}),
+                new ProductSet(new List<ProductItem>() {chocolateMilk, croissant})
             };
         }
 
