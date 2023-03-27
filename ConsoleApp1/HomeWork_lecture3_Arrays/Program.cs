@@ -14,20 +14,30 @@ namespace ConsoleApp1.HomeWork1
     {
         static void Main()
         {
+            //ProductItem croissant = new ProductItem("Croissant", 270, new DateTime(2023, 03, 08), new DateTime(2023, 04, 09));
+            //croissant.CheckExpirationDate();
+        //}
 
-        }
+        //public static void ProductBase()
+        //    {
+                List<Product> productList = new List<Product>()
+            {
+                new ProductItem("Chocolate milk", 150, new DateTime(2022, 11, 12), new DateTime(2023, 01, 12)),
+                new ProductItem("Camambert", 300, new DateTime(2023, 01, 25), new DateTime(2023, 07, 24)),
+                new ProductItem("Kefir", 250, new DateTime(2022, 11, 25), new DateTime(2023, 02, 02)),
+                new ProductItem("Croissant", 270, new DateTime(2023, 03, 08), new DateTime(2023, 03, 09)),
+                new ProductItem("Brezel", 180, new DateTime(2023, 03, 08), new DateTime(2023, 03, 12)),
+                new ProductItem("Carrot bun", 60, new DateTime(2023, 03, 08), new DateTime(2023, 03, 16))
+            };
 
-        public static void ProductBase()
-        {
-            //List<Product> productList = new List<Product>()
-            //{
-            //    new ProductItem("Chocolate milk", 150, new (2022, 11, 12), new DateTime(2023, 01, 12)),
-            //    new ProductItem("Camambert", 300, new DateTime(2023, 01, 25), new DateTime(2023, 07, 24)),
-            //    new ProductItem("Kefir", 250, new DateTime(2022, 11, 25), new DateTime(2023, 02, 02)),
-            //    new ProductItem("Croissant", 270, new DateTime(2023, 03, 08), new DateTime(2023, 03, 09)),
-            //    new ProductItem("Brezel", 180, new DateTime(2023, 03, 08), new DateTime(2023, 03, 12)),
-            //    new ProductItem("Carrot bun", 60, new DateTime(2023, 03, 08), new DateTime(2023, 03, 16))
-            //};
+            foreach (var item in productList)
+            {
+                item.GetInfo();
+                item.CheckExpirationDate();
+                Console.WriteLine();
+            }
+
+            var set = new ProductSet(productList);
 
             ProductItem croissant = new ProductItem("Croissant", 270, new DateTime(2023, 03, 08), new DateTime(2023, 03, 09));
             ProductItem brezel = new ProductItem("Brezel", 180, new DateTime(2023, 03, 08), new DateTime(2023, 03, 12));
@@ -37,10 +47,9 @@ namespace ConsoleApp1.HomeWork1
             {
                 new ProductBatch(chocolateMilk, 50),
                 new ProductBatch(croissant, 10),
-                new ProductItem("Croissant", 270, new DateTime(2023, 03, 08), new DateTime(2023, 03, 09)),
                 new ProductSet(new List<ProductItem>() {croissant, brezel}),
                 new ProductSet(new List<ProductItem>() {chocolateMilk, croissant})
-            };
+            };            
         }
 
         public static void PrintStudentList()

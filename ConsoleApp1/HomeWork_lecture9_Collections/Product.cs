@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TMS_homeworks.HomeWork_lecture9_Collections
+﻿namespace TMS_homeworks.HomeWork_lecture9_Collections
 {
     /// <summary>
     ///Полную структуру классов и их взаимосвязь продумать самостоятельно. Исходные данные база (List) из n товаров задать непосредственно в коде (захардкодить).
@@ -23,17 +17,28 @@ namespace TMS_homeworks.HomeWork_lecture9_Collections
         public DateTime manufactureDate { get; set; }
         public DateTime expirationDate { get; set; }
 
-        public override string ToString()
-        {
-            return $"Item: {name}, price: {price}, mfd: {manufactureDate}, best before: {expirationDate}";
-        }
+        private string isExpired;
+
+        DateTime currentDate = DateTime.Today;
+
+        //public override string ToString()
+        //{
+        //    return $"Item: {name}, price: {price}, mfd: {manufactureDate}, best before: {expirationDate}";
+        //}
+
         public virtual void GetInfo()
         {
-            ToString();
+            Console.WriteLine($"Item: {name}, price: {price}, mfd: {manufactureDate}, best before: {expirationDate}");
         }
         public virtual void CheckExpirationDate()
         {
+            if (expirationDate.Date < currentDate.Date)
+            {
+                isExpired = "Product is expired";
+            }
+            else isExpired = "Product is fresh";
 
+            Console.WriteLine($"{isExpired}");
         }
 
         public Product(string name, int price, DateTime manufactureDate, DateTime expirationDate)
@@ -44,9 +49,9 @@ namespace TMS_homeworks.HomeWork_lecture9_Collections
             this.expirationDate = expirationDate;
         }
 
-        public Product(ProductItem item, int quantity) 
-        { 
-        
+        public Product(ProductItem item, int quantity)
+        {
+
         }
 
         public Product()
