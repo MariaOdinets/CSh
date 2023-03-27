@@ -6,14 +6,30 @@ using System.Threading.Tasks;
 
 namespace TMS_homeworks.HomeWork_lecture9_Collections
 {
-    public class ProductBatch : Product
+    internal class ProductBatch
     {
-        public int quantity;
-        public ProductItem item;
-        public ProductBatch(ProductItem item, int quantity) : base(item, quantity)
+        public string BatchName { get; set; }
+        public int ProductQuantity { get; set; }
+        Product Product { get; set; }
+
+        public ProductBatch(string BatchName, Product Product, int ProductQuantity)
         {
-            this.item = item;
-            this.quantity = quantity;
+            this.BatchName = BatchName;
+            this.Product = Product;
+            this.ProductQuantity = ProductQuantity;
+        }
+        public override string ToString()
+        {
+            return $"{BatchName}";
+        }
+        public int GetBatchPrice()
+        {
+            return Product.productPrice * ProductQuantity;
+        }
+
+        public void CheckExpirationDate()
+        {
+            Product.CheckExpirationDate();  
         }
     }
 }
