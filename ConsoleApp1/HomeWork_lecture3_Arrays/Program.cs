@@ -2,6 +2,7 @@
 using ConsoleApp1.HomeWork_lecture6.Clinic;
 using ConsoleApp1.HomeWork_lecture6.Figures;
 using System.Collections;
+using System.ComponentModel;
 using System.Runtime.ExceptionServices;
 using System.Xml.Linq;
 using TMS_homeworks.HomeWork_lecture6.Autopark;
@@ -14,7 +15,8 @@ namespace ConsoleApp1.HomeWork1
     {
         static void Main()
         {
-            ListTask();
+            ProductDictionary.DictionaryToList();
+            //ListTask();
         }
         public static void ListTask()
         {
@@ -43,7 +45,7 @@ namespace ConsoleApp1.HomeWork1
                 }
             }
 
-            int minPrice = expensiveProducts.Min(m => m.productPrice);
+            int minPrice = expensiveProducts.Min(min => min.productPrice);
 
             Console.WriteLine("The cheapest " + minPrice);
             Console.WriteLine("\nModified list");

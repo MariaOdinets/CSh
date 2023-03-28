@@ -17,7 +17,7 @@ namespace TMS_homeworks.HomeWork_lecture9_Collections
  //Создать базу (List) из n товаров, вывести полную информацию из базы на экран, а также организовать поиск просроченного товара (на момент текущей даты).
  //Submission status
  /// </summary>
-    internal class Product : IComparable
+    internal class Product 
     {
         public string productName { get; set; }
         public int productPrice { get; set; }
@@ -45,10 +45,6 @@ namespace TMS_homeworks.HomeWork_lecture9_Collections
             else expirationStatus = "Product is fresh";
 
             Console.WriteLine(expirationStatus);
-        }
-        public int CompareTo(object? obj)
-        {
-            return productPrice.CompareTo(obj);
         }
     }
 }
