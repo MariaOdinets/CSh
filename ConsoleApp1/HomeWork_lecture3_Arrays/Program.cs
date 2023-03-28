@@ -48,6 +48,18 @@ namespace ConsoleApp1.HomeWork1
                 batches.CheckExpirationDate();
                 Console.WriteLine();
             }
+
+            List<ProductSet> productSets = new List<ProductSet>()
+            {
+                new ProductSet("Paris mood", productList[1], productList[3]),
+                new ProductSet("Child menu", productList[0],productList[5]) // я знаю, что так делать оч плохо, for test purposes only
+            };
+
+            foreach (var productSet in productSets)
+            {
+                Console.WriteLine("Set discount price:" + productSet.GetSetPrice());
+                productSet.CheckExpirationDate();
+            }
         }        
 
         public static void PrintStudentList()

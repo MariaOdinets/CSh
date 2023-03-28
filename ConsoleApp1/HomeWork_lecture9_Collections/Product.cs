@@ -21,8 +21,8 @@ namespace TMS_homeworks.HomeWork_lecture9_Collections
     {
         public string productName { get; set; }
         public int productPrice { get; set; }
-        DateTime manufactureDate { get; set; }
-        DateTime expirationDate { get; set; }
+        public DateTime manufactureDate { get; set; }
+        public DateTime expirationDate { get; set; }
         public string expirationStatus { get; set; }
 
         public Product(string productName, int productPrice, DateTime manufactureDate, DateTime expirationDate) 
