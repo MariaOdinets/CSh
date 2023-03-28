@@ -20,16 +20,35 @@ namespace ConsoleApp1.HomeWork1
         {
             List<Product> productList = new List<Product>()
             {
-                new Product("Banana milk", 140, new DateTime(2022, 11, 12), new DateTime(2023, 06, 12)),
+                new Product("Banana milk", 540, new DateTime(2022, 11, 12), new DateTime(2023, 06, 12)),
                 new Product("Gouda", 300, new DateTime(2023, 01, 25), new DateTime(2023, 07, 24)),
-                new Product("Sour cream", 250, new DateTime(2022, 11, 25), new DateTime(2023, 04, 02)),
+                new Product("Sour cream", 350, new DateTime(2022, 11, 25), new DateTime(2023, 04, 02)),
                 new Product("Sandwich", 270, new DateTime(2023, 03, 08), new DateTime(2023, 03, 09)),
-                new Product("Bread", 180, new DateTime(2023, 03, 08), new DateTime(2023, 03, 12)),
-                new Product("Apple", 60, new DateTime(2023, 03, 08), new DateTime(2023, 05, 16))
+                new Product("Bread", 320, new DateTime(2023, 03, 08), new DateTime(2023, 03, 12)),
+                new Product("Apple", 60, new DateTime(2023, 03, 08), new DateTime(2023, 05, 16)),
+                new Product("Apple juice", 160, new DateTime(2023, 03, 08), new DateTime(2023, 05, 16)),
+                new Product("Tomato", 60, new DateTime(2023, 03, 08), new DateTime(2023, 05, 16)),
+                new Product("Beef", 560, new DateTime(2023, 03, 08), new DateTime(2023, 05, 16))
             };
 
-            productList[0].productPrice += 100;
+            List<Product> expensiveProducts = new List<Product>();
+            Console.WriteLine("Expensive products");
 
+            foreach (var product in productList)
+            {
+                if (product.productPrice > 300)
+                {
+                    expensiveProducts.Add(product);
+                    Console.WriteLine(product);
+                }
+            }
+
+            int minPrice = expensiveProducts.Min(m => m.productPrice);
+
+            Console.WriteLine("The cheapest " + minPrice);
+            Console.WriteLine("\nModified list");
+
+            productList[0].productPrice += 100;
             productList.RemoveAt(5);
 
             foreach (Product product in productList)
@@ -37,7 +56,7 @@ namespace ConsoleApp1.HomeWork1
                 Console.WriteLine(product);
             }
 
-            Console.WriteLine("Remove all");
+            Console.WriteLine("\nRemove all");
 
             productList.RemoveRange(0, 5);
 
@@ -46,6 +65,7 @@ namespace ConsoleApp1.HomeWork1
                 Console.WriteLine(product);
             }
         }
+
         public static void ProductBase()
         {
             List<Product> productList = new List<Product>()
