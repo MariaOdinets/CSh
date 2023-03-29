@@ -48,5 +48,21 @@ namespace TMS_homeworks.HomeWork_lecture9_Collections
                 Console.WriteLine(quantity);
             }
         }
+        public static void ListToDictionary()
+        {
+            List<Product> productList = new List<Product>()
+            {
+                new Product("Banana milk", 540, new DateTime(2022, 11, 12), new DateTime(2023, 06, 12)),
+                new Product("Gouda", 300, new DateTime(2023, 01, 25), new DateTime(2023, 07, 24)),
+                new Product("Sour cream", 350, new DateTime(2022, 11, 25), new DateTime(2023, 04, 02))
+            };
+
+            Dictionary<string, int> productDictionary = productList.ToDictionary(x => x.productName, x => x.productPrice);
+
+            foreach (var item in productDictionary)
+            {
+                Console.WriteLine(item);
+            }
+        }
     }
 }
