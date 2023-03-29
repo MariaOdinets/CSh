@@ -57,7 +57,7 @@ namespace TMS_homeworks.HomeWork_lecture9_Collections
                 new Product("Sour cream", 350, new DateTime(2022, 11, 25), new DateTime(2023, 04, 02))
             };
 
-            Dictionary<string, int> productDictionary = productList.ToDictionary(x => x.productName, x => x.productPrice);
+            Dictionary<string, int> productDictionary = productList.ToDictionary(x => x.ProductName, x => x.ProductPrice);
 
             foreach (var item in productDictionary)
             {

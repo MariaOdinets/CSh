@@ -9,7 +9,7 @@ namespace TMS_homeworks.HomeWork_lecture9_Collections
     internal class ProductSet
     {
         public string SetName { get; set; }
-        List<Product> productList { get; set; }
+        List<Product> ProductList { get; set; }
         public Product Product { get; set; }
         public Product Product2 { get; set; }
         List<ProductSet> ProductSets { get; set; }
@@ -27,13 +27,13 @@ namespace TMS_homeworks.HomeWork_lecture9_Collections
         }
         public int GetSetPrice()
         {
-            return Product.productPrice + Product2.productPrice - 20;
+            return Product.ProductPrice + Product2.ProductPrice - 20;
         }
         public void CheckExpirationDate()
         {
             foreach (var item in ProductSets)
             {
-               
+
             }
         }
     }

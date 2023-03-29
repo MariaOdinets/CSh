@@ -39,19 +39,19 @@ namespace ConsoleApp1.HomeWork1
 
             foreach (var product in productList)
             {
-                if (product.productPrice > 300)
+                if (product.ProductPrice > 300)
                 {
                     expensiveProducts.Add(product);
                     Console.WriteLine(product);
                 }
             }
 
-            int minPrice = expensiveProducts.Min(min => min.productPrice);
+            int minPrice = expensiveProducts.Min(min => min.ProductPrice);
 
             Console.WriteLine("The cheapest " + minPrice);
             Console.WriteLine("\nModified list");
 
-            productList[0].productPrice += 100;
+            productList[0].ProductPrice += 100;
             productList.RemoveAt(5);
 
             foreach (Product product in productList)

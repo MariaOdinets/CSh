@@ -24,12 +24,12 @@ namespace TMS_homeworks.HomeWork_lecture9_Collections
         }
         public int GetBatchPrice()
         {
-            return Product.productPrice * ProductQuantity;
+            return Product.ProductPrice * ProductQuantity;
         }
 
         public void CheckExpirationDate()
         {
-            Product.CheckExpirationDate();  
+            Product.CheckExpirationDate();
         }
     }
 }
