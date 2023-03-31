@@ -15,9 +15,7 @@ namespace ConsoleApp1.HomeWork1
     {
         static void Main()
         {
-            ProductDictionary.ListToDictionary();
-            //ProductDictionary.DictionaryToList();
-            //ListTask();
+            
         }
         public static void ListTask()
         {

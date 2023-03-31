@@ -13,7 +13,7 @@ namespace ConsoleApp1.HomeWork_lecture6.Figures
 
         }
 
-        public double GetSquare()
+        public override double GetSquare()
         {
             Console.WriteLine("Get square for a square");
             return firstSide * 4;
