@@ -1,14 +1,138 @@
 ﻿using ConsoleApp1.HomeWork_lecture5;
 using ConsoleApp1.HomeWork_lecture6.Clinic;
 using ConsoleApp1.HomeWork_lecture6.Figures;
+using System.Collections;
+using System.ComponentModel;
+using System.Runtime.ExceptionServices;
+using System.Xml.Linq;
 using TMS_homeworks.HomeWork_lecture6.Autopark;
 using TMS_homeworks.HomeWork_lecture8_Exceptions;
+using TMS_homeworks.HomeWork_lecture9_Collections;
 
 namespace ConsoleApp1.HomeWork1
 {
     internal class Program_lecture5
     {
         static void Main()
+        {
+            ProductDictionary.ListToDictionary();
+            //ProductDictionary.DictionaryToList();
+            //ListTask();
+        }
+        public static void ListTask()
+        {
+            List<Product> productList = new List<Product>()
+            {
+                new Product("Banana milk", 540, new DateTime(2022, 11, 12), new DateTime(2023, 06, 12)),
+                new Product("Gouda", 300, new DateTime(2023, 01, 25), new DateTime(2023, 07, 24)),
+                new Product("Sour cream", 350, new DateTime(2022, 11, 25), new DateTime(2023, 04, 02)),
+                new Product("Sandwich", 270, new DateTime(2023, 03, 08), new DateTime(2023, 03, 09)),
+                new Product("Bread", 320, new DateTime(2023, 03, 08), new DateTime(2023, 03, 12)),
+                new Product("Apple", 60, new DateTime(2023, 03, 08), new DateTime(2023, 05, 16)),
+                new Product("Apple juice", 160, new DateTime(2023, 03, 08), new DateTime(2023, 05, 16)),
+                new Product("Tomato", 60, new DateTime(2023, 03, 08), new DateTime(2023, 05, 16)),
+                new Product("Beef", 560, new DateTime(2023, 03, 08), new DateTime(2023, 05, 16))
+            };
+
+            List<Product> expensiveProducts = new List<Product>();
+            Console.WriteLine("Expensive products");
+
+            foreach (var product in productList)
+            {
+                if (product.ProductPrice > 300)
+                {
+                    expensiveProducts.Add(product);
+                    Console.WriteLine(product);
+                }
+            }
+
+            int minPrice = expensiveProducts.Min(min => min.ProductPrice);
+
+            Console.WriteLine("The cheapest " + minPrice);
+            Console.WriteLine("\nModified list");
+
+            productList[0].ProductPrice += 100;
+            productList.RemoveAt(5);
+
+            foreach (Product product in productList)
+            {
+                Console.WriteLine(product);
+            }
+
+            Console.WriteLine("\nRemove all");
+
+            productList.RemoveRange(0, 5);
+
+            foreach (Product product in productList)
+            {
+                Console.WriteLine(product);
+            }
+        }
+
+        public static void ProductBase()
+        {
+            List<Product> productList = new List<Product>()
+            {
+                new Product("Chocolate milk", 150, new DateTime(2022, 11, 12), new DateTime(2023, 06, 12)),
+                new Product("Camambert", 300, new DateTime(2023, 01, 25), new DateTime(2023, 07, 24)),
+                new Product("Kefir", 250, new DateTime(2022, 11, 25), new DateTime(2023, 04, 02)),
+                new Product("Croissant", 270, new DateTime(2023, 03, 08), new DateTime(2023, 03, 09)),
+                new Product("Brezel", 180, new DateTime(2023, 03, 08), new DateTime(2023, 03, 12)),
+                new Product("Carrot bun", 60, new DateTime(2023, 03, 08), new DateTime(2023, 05, 16))
+            };
+
+            foreach (var product in productList)
+            {
+                Console.WriteLine(product);
+                product.CheckExpirationDate();
+                Console.WriteLine();
+            }
+
+            List<ProductBatch> productBatches = new List<ProductBatch>()
+            {
+                new ProductBatch("Chocolate milk batch", productList[0], 10),
+                new ProductBatch("Carrot bun batch", productList[5], 15)
+            };
+
+            foreach (var batches in productBatches)
+            {
+                Console.WriteLine(batches);
+                Console.WriteLine("Batch price:" + batches.GetBatchPrice());
+                batches.CheckExpirationDate();
+                Console.WriteLine();
+            }
+
+            List<ProductSet> productSets = new List<ProductSet>()
+            {
+                new ProductSet("Paris mood", productList[1], productList[3]),
+                new ProductSet("Child menu", productList[0],productList[5]) // я знаю, что так делать оч плохо, for test purposes only
+            };
+
+            foreach (var productSet in productSets)
+            {
+                Console.WriteLine("Set discount price:" + productSet.GetSetPrice());
+                productSet.CheckExpirationDate();
+            }
+        }
+
+        public static void PrintStudentList()
+        {
+            StudentsList.Print();
+        }
+
+        public static void ExceptionTask()
+        {
+            ArrayList list = new ArrayList();
+            try
+            {
+                object s = list[18];
+            }
+            catch
+            {
+                Console.WriteLine("Index out of bounds exception");
+            }
+        }
+        public static void RegistrationExceptions()
         {
             try
             {
@@ -21,14 +145,14 @@ namespace ConsoleApp1.HomeWork1
                 Console.WriteLine("Confirm your password:");
                 string? confirmPassword = Console.ReadLine();
 
-                var authorized = Authorization.Authorize(login, password, confirmPassword);
+                var registered = Registration.Register(login, password, confirmPassword);
 
-                if (authorized)
+                if (registered)
                 {
-                    Console.WriteLine("Authorized successfully");
+                    Console.WriteLine("Registered successfully");
                 }
-            } 
-            catch (Exception ex) 
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
