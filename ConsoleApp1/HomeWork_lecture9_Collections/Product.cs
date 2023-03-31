@@ -42,7 +42,10 @@ namespace TMS_homeworks.HomeWork_lecture9_Collections
             {
                 ExpirationStatus = "Product is spoiled";
             }
-            else ExpirationStatus = "Product is fresh";
+            else
+            {
+                   ExpirationStatus = "Product is fresh";
+            }
 
             Console.WriteLine(ExpirationStatus);
         }
