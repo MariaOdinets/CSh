@@ -1,10 +1,13 @@
 ﻿using ConsoleApp1.HomeWork_lecture5;
 using ConsoleApp1.HomeWork_lecture6.Clinic;
 using ConsoleApp1.HomeWork_lecture6.Figures;
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.ExceptionServices;
 using System.Xml.Linq;
+using TMS_homeworks.HomeWork_Lecture10_Generics;
 using TMS_homeworks.HomeWork_lecture6.Autopark;
 using TMS_homeworks.HomeWork_lecture8_Exceptions;
 using TMS_homeworks.HomeWork_lecture9_Collections;
@@ -103,7 +106,7 @@ namespace ConsoleApp1.HomeWork1
             List<ProductSet> productSets = new List<ProductSet>()
             {
                 new ProductSet("Paris mood", productList[1], productList[3]),
-                new ProductSet("Child menu", productList[0],productList[5]) // я знаю, что так делать оч плохо, for test purposes only
+                new ProductSet("Child menu", productList[0],productList[5]) 
             };
 
             foreach (var productSet in productSets)
