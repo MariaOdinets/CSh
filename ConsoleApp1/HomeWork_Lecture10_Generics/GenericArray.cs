@@ -14,11 +14,7 @@ namespace TMS_homeworks.HomeWork_Lecture10_Generics
     /// </summary>
     internal class GenericArray<T>
     {
-        T[] array;
-
-        GenericArray<T> genericArray = new();        
-
-        public GenericArray() { }
+        T[] array;     
         public GenericArray(T[] array)
         {
             this.array = array;
@@ -29,40 +25,52 @@ namespace TMS_homeworks.HomeWork_Lecture10_Generics
             array = list.ToArray();
         }
 
-        public static void Add(List<string> list)
+        public void Add(T value)
         {
-            
-            string input = Console.ReadLine();
+            List<T> list = new(array);
 
-            do
+            list.Add(value);
+
+            array = list.ToArray();
+        }
+
+        public void Delete(T value)
+        {
+            List<T> list = new(array);
+
+            for (int i = 0; i < list.Count; i++)
             {
-                list.Add(input);
+                if (object.Equals(list[i], value))
+                {
+                    list.RemoveAt(i);
+                }
             }
-            while (input != null);
+            array = list.ToArray();
         }
 
-        public static void Delete<T>(List<T> list)
-        {
-
-        }
-
-        public static void GetElement(T[] array)
-        {
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.WriteLine(array[i]);
-            }
-        }
-
-        public static void GetLength(T[] array)
+        public T GetElement(int index)
         {
             try
             {
-                Console.WriteLine(array.GetLength);
+                return array[index];
             }
-            catch
+            catch(IndexOutOfRangeException)
             {
-                throw new IndexOutOfRangeException("Index out of range");
+                Console.WriteLine("Index out of bounds");
+                return default;
+            }
+        }
+
+        public void GetLength()
+        {
+            Console.WriteLine(array.Length);           
+        }
+
+        public void Print()
+        {
+            foreach (T value in array)
+            {
+                Console.Write(value + " ");
             }
         }
     }

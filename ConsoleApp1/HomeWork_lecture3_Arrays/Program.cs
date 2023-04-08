@@ -18,7 +18,11 @@ namespace ConsoleApp1.HomeWork1
     {
         static void Main()
         {
-            
+            GenericArray<int> genericArray = new (new int[] {1, 2, 465, 8});
+            genericArray.Add(1);
+            genericArray.Delete(8);
+            genericArray.GetLength();
+            genericArray.Print();
         }
         public static void ListTask()
         {
