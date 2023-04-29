@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace TMS_homeworks.HomeWork_Lecture10_Generics
 {
-    abstract class Engine<T>
+    abstract class Engine
     {
-        protected Engine() { }
+        public string Type { get; set; }
+        public string FuelType { get; set; }
+        protected Engine() 
+        {
+            
+        }
     }
 }

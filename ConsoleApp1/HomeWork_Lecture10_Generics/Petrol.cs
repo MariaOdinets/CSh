@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace TMS_homeworks.HomeWork_Lecture10_Generics
 {
-    internal class Petrol<T> : Engine<T>
+    internal class Petrol : Engine
     {
+        public Petrol()
+        {
+            Type = "petrol";
+            FuelType = "petrol";
+        }
     }
 }

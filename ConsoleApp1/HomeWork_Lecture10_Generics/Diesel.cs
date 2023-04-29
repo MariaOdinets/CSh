@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace TMS_homeworks.HomeWork_Lecture10_Generics
 {
-    internal class Diesel<T> : Engine<T>
+    internal class Diesel : Engine
     {
-
+        public Diesel()
+        {
+            Type = "diesel";
+            FuelType = "diesel";
+        }
     }
 }

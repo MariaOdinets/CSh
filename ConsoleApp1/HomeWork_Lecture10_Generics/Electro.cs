@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace TMS_homeworks.HomeWork_Lecture10_Generics
 {
-    internal class Electro<T> : Engine<T>
+    internal class Electro : Engine
     {
-
+        public Electro()
+        {
+            Type = "electric";
+            FuelType = "electricity";
+        }
     }
 }
