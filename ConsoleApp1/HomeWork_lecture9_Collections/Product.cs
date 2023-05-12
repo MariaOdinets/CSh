@@ -32,10 +32,12 @@ namespace TMS_homeworks.HomeWork_lecture9_Collections
             ManufactureDate = manufactureDate;
             ExpirationDate = expirationDate;
         }
+
         public override string ToString()
         {
             return $"Item: {ProductName}, cost: {ProductPrice}, mfd: {ManufactureDate}, expiration: {ExpirationDate}";
         }
+
         public void CheckExpirationDate()
         {
             if (ExpirationDate.Date < DateTime.Now)

@@ -1,23 +1,38 @@
 ﻿using ConsoleApp1.HomeWork_lecture5;
 using ConsoleApp1.HomeWork_lecture6.Clinic;
 using ConsoleApp1.HomeWork_lecture6.Figures;
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.ExceptionServices;
 using System.Xml.Linq;
+using TMS_homeworks.HomeWork_Lecture10_Generics;
 using TMS_homeworks.HomeWork_lecture6.Autopark;
 using TMS_homeworks.HomeWork_lecture8_Exceptions;
 using TMS_homeworks.HomeWork_lecture9_Collections;
 
-namespace ConsoleApp1.HomeWork1
+namespace TMS_homeworks
 {
     internal class Program_lecture5
     {
         static void Main()
         {
-            ProductDictionary.ListToDictionary();
-            //ProductDictionary.DictionaryToList();
-            //ListTask();
+            var dieselEngine = new Diesel();
+            var car = new Car<Diesel>(dieselEngine);
+            car.Move();
+            car.Refill();
+        }
+
+        public static void GenericArrayTask()
+        {
+            {
+                GenericArray<int> genericArray = new(new int[] { 1, 2, 465, 81, 44 });
+                genericArray.Add(1);
+                genericArray.Delete(8);
+                genericArray.GetLength();
+                genericArray.Print();
+            }
         }
         public static void ListTask()
         {
@@ -105,7 +120,7 @@ namespace ConsoleApp1.HomeWork1
             List<ProductSet> productSets = new List<ProductSet>()
             {
                 new ProductSet("Paris mood", productList[1], productList[3]),
-                new ProductSet("Child menu", productList[0],productList[5]) // я знаю, что так делать оч плохо, for test purposes only
+                new ProductSet("Child menu", productList[0],productList[5])
             };
 
             foreach (var productSet in productSets)
@@ -217,11 +232,11 @@ namespace ConsoleApp1.HomeWork1
                 Phone mishasPhone = new Phone(24564464, "Samsung s22");
                 Phone grishasPhone = new Phone();
 
-                //grishasPhone.GetInfo();
-                //mashasPhone.ReceiveCall("Mike");
-                //mashasPhone.ReceiveCall(12356114, "Мила");
-                //mashasPhone.SendMessage(13545, 54545465, 46545); 
-                //mishasPhone.GetNumber();
+                grishasPhone.GetInfo();
+                mashasPhone.ReceiveCall("Mike");
+                mashasPhone.ReceiveCall(12356114, "Мила");
+                mashasPhone.SendMessage(13545, 54545465, 46545);
+                mishasPhone.GetNumber();
             }
         }
     }

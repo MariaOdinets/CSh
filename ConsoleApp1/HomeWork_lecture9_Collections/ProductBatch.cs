@@ -18,10 +18,12 @@ namespace TMS_homeworks.HomeWork_lecture9_Collections
             this.Product = Product;
             this.ProductQuantity = ProductQuantity;
         }
+
         public override string ToString()
         {
             return $"{BatchName}";
         }
+
         public int GetBatchPrice()
         {
             return Product.ProductPrice * ProductQuantity;
