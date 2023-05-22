@@ -8,15 +8,38 @@ using System.ComponentModel;
 using System.Runtime.ExceptionServices;
 using System.Xml.Linq;
 using TMS_homeworks.HomeWork_Lecture10_Generics;
+using TMS_homeworks.HomeWork_lecture11_Delegates;
 using TMS_homeworks.HomeWork_lecture6.Autopark;
 using TMS_homeworks.HomeWork_lecture8_Exceptions;
 using TMS_homeworks.HomeWork_lecture9_Collections;
+using static TMS_homeworks.HomeWork_lecture11_Delegates.PriceMonitor;
 
 namespace TMS_homeworks
 {
     internal class Program_lecture5
     {
-        static void Main()
+        public static void Main()
+        {
+            Random random = new();
+
+            int price = random.Next(300, 2500);
+
+            PriceMonitor monitor = new PriceMonitor();
+            Subscriber300_500 subscriber300_500 = new Subscriber300_500();
+            Subscriber300_800 subscriber300_800 = new Subscriber300_800();
+
+            MonitorDelegate monitorDelegate = new MonitorDelegate(ShowPrice);
+            monitorDelegate(price);
+
+            monitor.Subscribe(subscriber300_500);
+            monitor.Subscribe(subscriber300_800);
+            subscriber300_500.InformSubscribers(monitor, price);
+            subscriber300_800.InformSubscribers(monitor, price);
+
+            Console.ReadKey();
+        }
+
+        public static void CarTask()
         {
             var dieselEngine = new Diesel();
             var car = new Car<Diesel>(dieselEngine);
