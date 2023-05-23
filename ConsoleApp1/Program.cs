@@ -9,6 +9,7 @@ using System.Runtime.ExceptionServices;
 using System.Xml.Linq;
 using TMS_homeworks.HomeWork_Lecture10_Generics;
 using TMS_homeworks.HomeWork_lecture11_Delegates;
+using TMS_homeworks.HomeWork_lecture12_LINQ;
 using TMS_homeworks.HomeWork_lecture6.Autopark;
 using TMS_homeworks.HomeWork_lecture8_Exceptions;
 using TMS_homeworks.HomeWork_lecture9_Collections;
@@ -18,7 +19,18 @@ namespace TMS_homeworks
 {
     internal class Program_lecture5
     {
+        public static string[] words = {"3", "k", "Katy", "Null", "3", "Null", "l", "tree", "tee", "33", "33", "rail" };
         public static void Main()
+        {
+            Console.WriteLine($"First one character word in array - {Words.GetOneLetterWord(words)}");
+            Console.WriteLine($"Last word containing 'ee' is {Words.GetLastSubstringWord(words)}");
+            Console.WriteLine($"Number of unique words in the array: {Words.GetQntyUniqueValues(words)}");
+            //Console.WriteLine($"Words from 5th position with '3' are {Words.GetValuesWith3(words)}");
+            Console.WriteLine($"The length of the shortest word is {Words.GetLengthOfShortest(words)}");
+            Console.WriteLine($"Last word with defined length is {Words.GetLastLengthWord(words)}");
+        }
+
+        public static void Observer()
         {
             Random random = new();
 
