@@ -35,7 +35,7 @@ namespace TMS_homeworks.HomeWork_lecture12_LINQ
             return words.Distinct().Count();
         }
 
-        //public static IEnumerable<string> GetValuesWith3(IList<string> words)
+        //public static IEnumerable<string> GetValuesWith3(IEnumerable<string> words)
         //{
         //   return words.Skip(4).Where(words => words.Contains('3'));
         //}
